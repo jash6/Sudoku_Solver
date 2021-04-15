@@ -1,6 +1,7 @@
 import pygame
 from solver import solve, valid
 import time
+from generate import Generate
 pygame.font.init()
 
 
@@ -18,6 +19,8 @@ class Grid:
     ]
 
     def __init__(self, rows, cols, width, height):
+        initgrid=Generate()
+        self.board=initgrid.board
         self.rows = rows
         self.cols = cols
         self.cubes = [[Cube(self.board[i][j], i, j, width, height) for j in range(cols)] for i in range(rows)]
